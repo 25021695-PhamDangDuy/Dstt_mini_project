@@ -63,11 +63,35 @@ def get_info_student(arr : dict, key : str) -> list:
         return ID,Name_list, CC, GK, CK, TB
     else:
         print("KeyValue Error!")
-    
 
 
-def show_diem(a):
-    pass
 
-print(get_info_student(temp_arr, key = "All"))
+def show_grade(arr : dict, key):
+    if key == "All":
+        print("=================================================================")
+        print(f"{"Mã sv":<8}{"Họ và Tên":<30}{"Điểm CC":<10}{"Điểm GK":<10}{"Điểm CK":<10}{"Điểm TB":<10}")
+        print("-----------------------------------------------------------------")
+        for key, value in arr.items():
+            print(f"{key:<8}{value["Name"]:<30}{value["Điểm CC"]:<10}{value["Điểm GK"]:<10}{value["Điểm CK"]:<10}{value["Điểm TB"]:<10}")
+    else:
+        is_CC = False
+        is_GK = False
+        is_CK = False
+        is_TB = False
+        for x in key:
+            is_CC = True if ( x == "1") else is_CC
+            is_GK = True if ( x == "2") else is_GK
+            is_CK = True if ( x == "3") else is_CK
+            is_TB = True if ( x == "4") else is_TB
+        print(f"{"Mã sv":<8}{"Họ và Tên":<30}" + (f"{"Điểm CC":<10}" if is_CC else "") + (f"{"Điểm GK":<10}" if is_GK else "") + (f"{"Điểm CK":<10}" if is_CK else "") + (f"{"Điểm TB":<10}" if is_TB else ""))
+        for key, value in arr.items():
+            print(f"{key:<8}{value["Name"]:<30}" + (f"{value["Điểm CC"]:<10}" if is_CC else "") + (f"{value["Điểm GK"]:<10}" if is_GK else "") + (f"{value["Điểm CK"]:<10}" if is_CK else "") + (f"{value["Điểm TB"]:<10}" if is_TB else ""))
+show_grade(temp_arr, "24")
+
+
+
+
+
+
+
 
