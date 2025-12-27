@@ -40,7 +40,7 @@ def back_tracking(arr : dict, funcDef ,startValue : int, endValue = 4):
             print("1. Quay lại                  2.Dừng chương trình")
             n = int(input("Bạn muốn: "))
         if n == 1:
-           back_tracking(arr, funcDef, startValue, endValue)
+           n = 0
         elif n == 2:
             print("Xác nhận dừng chương trình(y/n):")
             xac_nhan = input("Xác nhận: ")
@@ -57,7 +57,7 @@ def back_tracking(arr : dict, funcDef ,startValue : int, endValue = 4):
         
 
 #Show infor def
-def Show_infor(arr):
+def Show_infor(arr ):
     """
     Hàm này xử lí input nhập vào là những gì user mong muốn + database -> Hiển thị lên terminal những gì user cần 
     """
@@ -104,6 +104,7 @@ def Show_infor(arr):
         print(GUI_2)
     elif n == 3:
         print("Đang quay về!")
+        main()
         
 
 

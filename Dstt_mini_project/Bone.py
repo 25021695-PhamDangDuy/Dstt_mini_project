@@ -66,6 +66,8 @@ def get_info_student(arr : dict, key : str) -> list:
     
 
 
+def show_diem(a):
+    pass
 
 print(get_info_student(temp_arr, key = "All"))
 
