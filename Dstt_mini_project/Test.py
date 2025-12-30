@@ -23,6 +23,17 @@ temp_arr = {
     }
 } 
 def show_grade(arr : dict, key):
+    print("===============[Xem Danh sách]==============")
+    print("1. Xem từng phần         2. Xem toàn bộ  ")
+    n = int(input("Nhập số tương ứng: "))
+    if n == 2:
+        key = "All"
+    if n == 1:
+        print("=========[Chọn phần muốn xem]========")
+        print("1.Điểm CC                2.Điểm GK")
+        print("3.Điểm CK                4.Điểm TB")
+        key = input("Chọn các số mà bạn mong muốn(ví dụ 12, 1, 34): ")
+
     if key == "All":
         print("=================================================================")
         print(f"{"Mã sv":<8}{"Họ và Tên":<30}{"Điểm CC":<10}{"Điểm GK":<10}{"Điểm CK":<10}{"Điểm TB":<10}")
@@ -243,7 +254,7 @@ Xác nhận thay đổi ? (y/n)
             if xn=='y':
                 Xác_nhận=True
                 print('Đã chỉnh sửa thông tin')
-                temp_arr[m]={"Name": ten, "Điểm CC": điểm_cc, "Điểm GK": điểm_gk, "Điểm CK": điểm_ck, "Điểm TB": float(điểm_cc)*0.1+float(điểm_gk)*0.3+float(điểm_ck)*0.6}
+                temp_arr[m]={"Họ và Tên": ten, "Điểm CC": điểm_cc, "Điểm GK": điểm_gk, "Điểm CK": điểm_ck, "Điểm TB": float(điểm_cc)*0.1+float(điểm_gk)*0.3+float(điểm_ck)*0.6}
             if xn=='n':
                 xn_2=input("""
 ==============================
@@ -271,11 +282,16 @@ Chọn tác vụ:
 def main():
     n = 0 
     while True:
+        print("\n========== QUẢN LÝ SINH VIÊN ==========")
+        print("1. Hiển thị danh sách")
+        print("2. Xoá thông tin sinh viên")
+        print("3. Nhập thông tin")
+        print("4. Chỉnh sửa")
+        print("5. Thoát")
         if n == 0:
             n = int(input("Nhập số tương ứng với yêu cầu mà bạn muốn: "))
         if n == 1:
             show_grade(temp_arr, "All")
-          
         elif n == 2:
             delete_infor()
         elif n == 3:
