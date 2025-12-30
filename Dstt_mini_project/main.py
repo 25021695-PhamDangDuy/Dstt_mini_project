@@ -1,6 +1,6 @@
 import math
 import os
-
+from Bone import show_grade, Add_infor, delete_infor, classroom_data, tinh_diem_tong_ket
 #StorageSetting
 ID_stg = {}
 """
